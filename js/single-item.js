@@ -1,7 +1,7 @@
 function createSingleItem(item) {
-  var $div = $('<div class="single-item"></div>');
+    var $div = $('<div class="single-item"></div>');
 
-  $div.html(`
+    $div.html(`
     <input type="checkbox" ${item.completed ? "checked" : ""} />
     <p style="text-decoration: ${item.completed ? "line-through" : "none"}">
       ${item.name}
@@ -14,5 +14,9 @@ function createSingleItem(item) {
     </button>
   `);
 
-  return $div;
+    $div.find('input[type="checkbox"]').on("change", function () {
+        editCompleted(item.id);
+    });
+
+    return $div;
 }
