@@ -7,11 +7,11 @@ function createForm(editId, itemToEdit) {
       <input
         type="text"
         class="form-input"
-        placeholder="e.g. eggs"
+        placeholder="e.g. apples"
         value="${itemToEdit ? itemToEdit.name : ""}"
       />
       <button type="submit" class="btn">
-        ${editId ? "edit item" : "add item"}
+        ${editId ? '<i class="fa-regular fa-pen-to-square"></i>' : '<i class="fa-regular fa-square-plus"></i>'}
       </button>
     </div>
   `);
